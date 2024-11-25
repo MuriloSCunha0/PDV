@@ -231,16 +231,16 @@ public class sale extends javax.swing.JPanel {
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Customer :");
+        jLabel3.setText("Cliente");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setText("Product :");
+        jLabel4.setText("Produto");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setText("Qty :");
+        jLabel5.setText("Qtd:");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setText("Unit Price :");
+        jLabel6.setText("Preço Unit :");
 
         u_price.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         u_price.setText("00.00");
@@ -270,7 +270,7 @@ public class sale extends javax.swing.JPanel {
         });
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setText("Total Price :");
+        jLabel7.setText("Preço Total:");
 
         tot_price.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tot_price.setText("00.00");
@@ -324,7 +324,7 @@ public class sale extends javax.swing.JPanel {
                         .addComponent(com_cus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(com_pro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(p_qty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -353,21 +353,21 @@ public class sale extends javax.swing.JPanel {
 
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton1.setText("Add to Cart");
+        jButton1.setText("Add a sacola");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Remove");
+        jButton2.setText("Remover Item");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Remove All");
+        jButton3.setText("Deletar Sacola");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -400,7 +400,7 @@ public class sale extends javax.swing.JPanel {
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setText("Paid Amount :");
+        jLabel8.setText("Valor a pagar:");
 
         paid_amt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         paid_amt.setText("0");
@@ -418,11 +418,11 @@ public class sale extends javax.swing.JPanel {
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel10.setText("Total Amount :");
+        jLabel10.setText("Valor total:");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel11.setText("Balance/Due :");
+        jLabel11.setText("Desconto");
 
         balance.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         balance.setText("00.00");
@@ -458,7 +458,7 @@ public class sale extends javax.swing.JPanel {
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setText("Total Qty :");
+        jLabel1.setText("Total Qtd:");
 
         tot_qty.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         tot_qty.setText("00");
@@ -496,7 +496,7 @@ public class sale extends javax.swing.JPanel {
         );
 
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton4.setText("Pay & Print");
+        jButton4.setText("Finalizar Venda");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);

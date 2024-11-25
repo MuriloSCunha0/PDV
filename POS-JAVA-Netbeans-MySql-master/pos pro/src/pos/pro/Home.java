@@ -40,7 +40,7 @@ public class Home extends javax.swing.JFrame {
         home_bnt_grp.add(jToggleButton1);
         jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/pro/img/customer.png"))); // NOI18N
-        jToggleButton1.setText("Customers");
+        jToggleButton1.setText("Cliente");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
@@ -50,7 +50,7 @@ public class Home extends javax.swing.JFrame {
         home_bnt_grp.add(jToggleButton2);
         jToggleButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/pro/img/supplier.png"))); // NOI18N
-        jToggleButton2.setText("supplier");
+        jToggleButton2.setText("Fornecedor");
         jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton2ActionPerformed(evt);
@@ -60,7 +60,7 @@ public class Home extends javax.swing.JFrame {
         home_bnt_grp.add(jToggleButton3);
         jToggleButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/pro/img/product.png"))); // NOI18N
-        jToggleButton3.setText("Product");
+        jToggleButton3.setText("Produtos");
         jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton3ActionPerformed(evt);
@@ -70,7 +70,7 @@ public class Home extends javax.swing.JFrame {
         home_bnt_grp.add(jToggleButton4);
         jToggleButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/pro/img/emp.png"))); // NOI18N
-        jToggleButton4.setText("employee");
+        jToggleButton4.setText("Vendedor");
         jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton4ActionPerformed(evt);
@@ -80,7 +80,7 @@ public class Home extends javax.swing.JFrame {
         home_bnt_grp.add(jToggleButton5);
         jToggleButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jToggleButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/pro/img/sales_menu.png"))); // NOI18N
-        jToggleButton5.setText("Sales");
+        jToggleButton5.setText("Venda");
         jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton5ActionPerformed(evt);
@@ -90,7 +90,7 @@ public class Home extends javax.swing.JFrame {
         home_bnt_grp.add(jToggleButton6);
         jToggleButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jToggleButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/pro/img/invo.png"))); // NOI18N
-        jToggleButton6.setText("Invoice");
+        jToggleButton6.setText("Fatura");
         jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton6ActionPerformed(evt);

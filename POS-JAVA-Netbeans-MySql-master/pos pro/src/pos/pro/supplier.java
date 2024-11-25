@@ -209,7 +209,7 @@ public class supplier extends javax.swing.JPanel {
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Search ID :");
+        jLabel3.setText("ID:");
 
         c_search.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         c_search.setText("0");
@@ -238,7 +238,7 @@ public class supplier extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Name :");
+        jLabel1.setText("Nome:");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("T.P Number :");
@@ -248,22 +248,22 @@ public class supplier extends javax.swing.JPanel {
         c_tp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setText("Billing Address :");
+        jLabel6.setText("Endereço de cobrança:");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setText("shiping Addres :");
+        jLabel7.setText("Endereço de pagamento:");
 
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Contact Person"));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setText("Contact Person :");
+        jLabel9.setText("Contato:");
 
         c_person.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         cp_name.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setText("Name :");
+        jLabel8.setText("Nome:");
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setText("T.P Number :");
@@ -334,10 +334,10 @@ public class supplier extends javax.swing.JPanel {
         );
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setText("Bank Acc No :");
+        jLabel10.setText("Conta bancaria:");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel11.setText("City :");
+        jLabel11.setText("Cidade:");
 
         c_bank.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         c_bank.addActionListener(new java.awt.event.ActionListener() {
@@ -350,7 +350,7 @@ public class supplier extends javax.swing.JPanel {
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/pro/img/delete.png"))); // NOI18N
-        jButton1.setText("Delete");
+        jButton1.setText("Deletar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -359,7 +359,7 @@ public class supplier extends javax.swing.JPanel {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/pro/img/update.png"))); // NOI18N
-        jButton2.setText("Update");
+        jButton2.setText("Atualizar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -368,7 +368,7 @@ public class supplier extends javax.swing.JPanel {
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/pro/img/search x30.png"))); // NOI18N
-        jButton3.setText("Search");
+        jButton3.setText("Buscar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -377,7 +377,7 @@ public class supplier extends javax.swing.JPanel {
 
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/pro/img/save.png"))); // NOI18N
-        jButton4.setText("Save");
+        jButton4.setText("Salvar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -435,11 +435,7 @@ public class supplier extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addGap(24, 24, 24)
-                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(6, 6, 6))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addContainerGap()
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -455,7 +451,11 @@ public class supplier extends javax.swing.JPanel {
                                                     .addGap(18, 18, 18)))
                                             .addGroup(jPanel2Layout.createSequentialGroup()
                                                 .addComponent(same)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addGap(66, 66, 66)
+                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
@@ -463,7 +463,7 @@ public class supplier extends javax.swing.JPanel {
                                     .addComponent(c_name, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(c_bank)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel11)
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(c_city, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -532,7 +532,7 @@ public class supplier extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Add Supplier", jPanel6);
+        jTabbedPane1.addTab("Adicionar Fornecedor", jPanel6);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -561,7 +561,7 @@ public class supplier extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setText("Supplier Name :");
+        jLabel5.setText("Nome:");
 
         c_search_tbl.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         c_search_tbl.setText("0");
@@ -577,7 +577,7 @@ public class supplier extends javax.swing.JPanel {
         });
 
         jLabel16.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel16.setText("City :");
+        jLabel16.setText("Cidade");
 
         sh_city.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         sh_city.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -587,7 +587,7 @@ public class supplier extends javax.swing.JPanel {
         });
 
         jLabel17.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel17.setText("Preson Name :");
+        jLabel17.setText("Nome do fornecedor:");
 
         sh_tp.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         sh_tp.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -597,7 +597,7 @@ public class supplier extends javax.swing.JPanel {
         });
 
         jLabel18.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel18.setText("Contact Person :");
+        jLabel18.setText("Contato");
 
         sh_cp.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         sh_cp.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -721,7 +721,7 @@ public class supplier extends javax.swing.JPanel {
                         .addContainerGap())))
         );
 
-        jTabbedPane1.addTab("Serch Supplier", jPanel4);
+        jTabbedPane1.addTab("Busar Fornecedor", jPanel4);
 
         jButton5.setText("All Supplier Reports");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -856,22 +856,6 @@ public class supplier extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_c_search_tblActionPerformed
 
-    private void sh_cityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sh_cityKeyReleased
-      serch();  
-    }//GEN-LAST:event_sh_cityKeyReleased
-
-    private void sh_tpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sh_tpKeyReleased
-       serch(); 
-    }//GEN-LAST:event_sh_tpKeyReleased
-
-    private void sh_cpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sh_cpKeyReleased
-        serch();
-    }//GEN-LAST:event_sh_cpKeyReleased
-
-    private void sh_pnKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sh_pnKeyReleased
-        serch();
-    }//GEN-LAST:event_sh_pnKeyReleased
-
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // Open All Customers
         
@@ -892,16 +876,6 @@ public class supplier extends javax.swing.JPanel {
         
         
     }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void sameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sameActionPerformed
-        // Same as Billing code
-
-        if (same.isSelected()) {
-            c_shipadd.setText(c_billadd.getText());
-        }else{
-            c_shipadd.setText("");
-        }
-    }//GEN-LAST:event_sameActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 
@@ -1028,13 +1002,39 @@ public class supplier extends javax.swing.JPanel {
         clearText();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void c_bankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_bankActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_c_bankActionPerformed
+    private void sh_pnKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sh_pnKeyReleased
+        serch();
+    }//GEN-LAST:event_sh_pnKeyReleased
 
     private void sh_pnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sh_pnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sh_pnActionPerformed
+
+    private void sh_cpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sh_cpKeyReleased
+        serch();
+    }//GEN-LAST:event_sh_cpKeyReleased
+
+    private void sh_tpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sh_tpKeyReleased
+        serch();
+    }//GEN-LAST:event_sh_tpKeyReleased
+
+    private void sh_cityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sh_cityKeyReleased
+        serch();
+    }//GEN-LAST:event_sh_cityKeyReleased
+
+    private void sameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sameActionPerformed
+        // Same as Billing code
+
+        if (same.isSelected()) {
+            c_shipadd.setText(c_billadd.getText());
+        }else{
+            c_shipadd.setText("");
+        }
+    }//GEN-LAST:event_sameActionPerformed
+
+    private void c_bankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_bankActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_c_bankActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
