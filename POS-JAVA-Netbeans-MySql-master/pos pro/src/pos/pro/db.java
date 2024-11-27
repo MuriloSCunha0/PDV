@@ -49,15 +49,11 @@ public class db {
                     "cid INT AUTO_INCREMENT PRIMARY KEY, " +
                     "customer_name VARCHAR(255), " +
                     "Tp_Number VARCHAR(255), " +
-                    "billing_address TEXT, " +
-                    "shipping_address TEXT, " +
-                    "bank VARCHAR(255), " +
+                    
                     "city VARCHAR(255), " +
                     "person_name VARCHAR(255), " +
-                    "contact_person VARCHAR(255), " +
+                    
                     "person_tp VARCHAR(255), " +
-                    "email VARCHAR(255), " +
-                    "online VARCHAR(255)" +
                     ");");
 
             // Criar tabela de fornecedores
@@ -65,15 +61,12 @@ public class db {
                     "sid INT AUTO_INCREMENT PRIMARY KEY, " +
                     "supplier_name VARCHAR(255), " +
                     "Tp_Number VARCHAR(255), " +
-                    "billing_address TEXT, " +
-                    "shipping_address TEXT, " +
-                    "bank VARCHAR(255), " +
+                    
+                    "product_type(255), " +
                     "city VARCHAR(255), " +
                     "person_name VARCHAR(255), " +
                     "contact_person VARCHAR(255), " +
-                    "person_tp VARCHAR(255), " +
-                    "email VARCHAR(255), " +
-                    "online VARCHAR(255)" +
+                    
                     ");");
 
             // Criar tabela de produtos
