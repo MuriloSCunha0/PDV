@@ -400,7 +400,7 @@ public class sale extends javax.swing.JPanel {
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setText("Valor a pagar:");
+        jLabel8.setText("Desconto:");
 
         paid_amt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         paid_amt.setText("0");
