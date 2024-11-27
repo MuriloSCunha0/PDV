@@ -77,7 +77,7 @@ public class employee extends javax.swing.JPanel {
  
      String city = sh_city.getText();
      String tp = sh_tp.getText();
-     String contact_person = sh_cp.getText();
+   
      String person_name = sh_pn.getText();
      
      
@@ -87,7 +87,7 @@ public class employee extends javax.swing.JPanel {
          dtm.setRowCount(0);
          
          Statement s = db.mycon().createStatement();
-         ResultSet rs = s.executeQuery(" SELECT * FROM employee WHERE city LIKE  '%"+ city +"%' AND tp_number LIKE '%"+ tp +"%' AND contact_person LIKE '%"+contact_person+"%' AND person_name LIKE '%"+person_name+"%' ");
+         ResultSet rs = s.executeQuery(" SELECT * FROM employee WHERE city LIKE  '%"+ city +"%' AND tp_number LIKE '%"+ tp +"%' AND person_name LIKE '%"+person_name+"%' ");
          
         // You can Use OR or AND
          
@@ -127,15 +127,10 @@ public class employee extends javax.swing.JPanel {
  
     c_name.setText("");
     c_tp.setText("");
-    c_billadd.setText("");
-    c_shipadd.setText("");
-    c_bank.setText("");
-    c_city.setText("");
+    
     cp_name.setText("");
     c_person.setText("");
-    cp_tp.setText("");
-    cp_email.setText("");
-    cp_online.setText("");
+    
  
  
  
@@ -157,33 +152,16 @@ public class employee extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         c_name = new javax.swing.JTextField();
         c_tp = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         c_person = new javax.swing.JTextField();
         cp_name = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        cp_tp = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        cp_email = new javax.swing.JTextField();
-        cp_online = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        c_bank = new javax.swing.JTextField();
-        c_city = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        c_billadd = new javax.swing.JTextArea();
-        same = new javax.swing.JCheckBox();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        c_shipadd = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -196,8 +174,6 @@ public class employee extends javax.swing.JPanel {
         sh_city = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         sh_tp = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        sh_cp = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         sh_pn = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
@@ -247,22 +223,16 @@ public class employee extends javax.swing.JPanel {
         jLabel1.setText("Name :");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("T.P Number :");
+        jLabel2.setText("Função:");
 
         c_name.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         c_tp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setText("Main Address :");
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setText("Temp Addres :");
-
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Contact Person"));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setText("Contact Person :");
+        jLabel9.setText("Contato:");
 
         c_person.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
@@ -271,48 +241,19 @@ public class employee extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Name :");
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel12.setText("T.P Number :");
-
-        cp_tp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel13.setText("Email :");
-
-        cp_email.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
-        cp_online.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel14.setText("Online :");
-
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel12)
-                                .addComponent(jLabel9))
-                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(jLabel13)))
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(cp_email, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                    .addComponent(cp_tp, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(c_person, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(c_person, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                     .addComponent(cp_name, javax.swing.GroupLayout.Alignment.LEADING)))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jLabel14)
-                .addGap(20, 20, 20)
-                .addComponent(cp_online, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -324,35 +265,8 @@ public class employee extends javax.swing.JPanel {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(c_person, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cp_tp, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cp_email, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(cp_online, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(187, 187, 187))
+                .addGap(180, 180, 180))
         );
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setText("Bank Acc No :");
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel11.setText("City :");
-
-        c_bank.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        c_bank.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                c_bankActionPerformed(evt);
-            }
-        });
-
-        c_city.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/pro/img/delete.png"))); // NOI18N
@@ -417,21 +331,6 @@ public class employee extends javax.swing.JPanel {
                 .addGap(25, 25, 25))
         );
 
-        c_billadd.setColumns(20);
-        c_billadd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jScrollPane2.setViewportView(c_billadd);
-
-        same.setText("Same as Main");
-        same.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sameActionPerformed(evt);
-            }
-        });
-
-        c_shipadd.setColumns(20);
-        c_shipadd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jScrollPane4.setViewportView(c_shipadd);
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -439,39 +338,14 @@ public class employee extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addGap(24, 24, 24)
-                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(6, 6, 6))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(jLabel2)
-                                                        .addComponent(jLabel6)
-                                                        .addComponent(jLabel1))
-                                                    .addGap(8, 8, 8))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                                    .addComponent(jLabel7)
-                                                    .addGap(18, 18, 18)))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(same)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))))
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(c_tp, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(c_name, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(c_bank)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(c_city, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(c_tp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
+                            .addComponent(c_name, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -482,7 +356,7 @@ public class employee extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(c_name, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
@@ -491,29 +365,10 @@ public class employee extends javax.swing.JPanel {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(c_tp, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(same))
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(c_bank, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel11))
-                            .addComponent(c_city, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 361, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -535,7 +390,7 @@ public class employee extends javax.swing.JPanel {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Add Employee", jPanel6);
@@ -583,7 +438,7 @@ public class employee extends javax.swing.JPanel {
         });
 
         jLabel16.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel16.setText("City :");
+        jLabel16.setText("Endereço");
 
         sh_city.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         sh_city.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -593,7 +448,7 @@ public class employee extends javax.swing.JPanel {
         });
 
         jLabel17.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel17.setText("Preson Name :");
+        jLabel17.setText("Nome:");
 
         sh_tp.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         sh_tp.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -602,18 +457,8 @@ public class employee extends javax.swing.JPanel {
             }
         });
 
-        jLabel18.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel18.setText("Contact Person :");
-
-        sh_cp.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        sh_cp.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                sh_cpKeyReleased(evt);
-            }
-        });
-
         jLabel19.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel19.setText("TelePhone :");
+        jLabel19.setText("Contato:");
 
         sh_pn.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         sh_pn.addActionListener(new java.awt.event.ActionListener() {
@@ -647,11 +492,7 @@ public class employee extends javax.swing.JPanel {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(sh_tp, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sh_cp, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18))
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17)
                     .addComponent(sh_pn, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -674,10 +515,6 @@ public class employee extends javax.swing.JPanel {
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(sh_pn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jLabel18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sh_cp, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -869,10 +706,6 @@ public class employee extends javax.swing.JPanel {
        serch(); 
     }//GEN-LAST:event_sh_tpKeyReleased
 
-    private void sh_cpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sh_cpKeyReleased
-        serch();
-    }//GEN-LAST:event_sh_cpKeyReleased
-
     private void sh_pnKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sh_pnKeyReleased
         serch();
     }//GEN-LAST:event_sh_pnKeyReleased
@@ -898,36 +731,20 @@ public class employee extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void sameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sameActionPerformed
-        // Same as Billing code
-
-        if (same.isSelected()) {
-            c_shipadd.setText(c_billadd.getText());
-        }else{
-            c_shipadd.setText("");
-        }
-    }//GEN-LAST:event_sameActionPerformed
-
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 
         String name = c_name.getText();
         String tp = c_tp.getText();
 
-        String bill_add = c_billadd.getText();
-        String shipp_add = c_shipadd.getText();
-        String bank = c_bank.getText();
-        String city = c_city.getText();
+        
         String person_name = cp_name.getText();
         String contact_person = c_person.getText();
-        String person_tp = cp_tp.getText();
-        String email = cp_email.getText();
-        String online = cp_online.getText();
-
+        
         try {
 
             Statement s = db.mycon().createStatement();
             s.executeUpdate(" INSERT INTO employee (employee_name,Tp_Number,main_address,temp_address,bank,city,person_name,contact_person,person_tp,email,online) "
-                + "VALUES ('"+name+"','"+tp+"','"+bill_add+"','"+shipp_add+"','"+bank+"','"+city+"','"+person_name+"','"+contact_person+"','"+person_tp+"','"+email+"','"+online+"')");
+                + "VALUES ('"+name+"','"+tp+"','"+person_name+"','"+contact_person+"')");
 
             JOptionPane.showMessageDialog(null, "Dtata saved");
 
@@ -954,16 +771,11 @@ public class employee extends javax.swing.JPanel {
 
                 c_name.setText(rs.getString("employee_name"));
                 c_tp.setText(rs.getString("tp_number"));
-                c_billadd.setText(rs.getString("main_address"));
-                c_shipadd.setText(rs.getString("temp_address"));
-                c_bank.setText(rs.getString("bank"));
-                c_city.setText(rs.getString("city"));
+                
 
                 cp_name.setText(rs.getString("person_name"));
                 c_person.setText(rs.getString("contact_person"));
-                cp_tp.setText(rs.getString("person_tp"));
-                cp_email.setText(rs.getString("email"));
-                cp_online.setText(rs.getString("online"));
+                
 
             }
 
@@ -980,30 +792,19 @@ public class employee extends javax.swing.JPanel {
         String name = c_name.getText();
         String tp = c_tp.getText();
 
-        String bill_add = c_billadd.getText();
-        String shipp_add = c_shipadd.getText();
-        String bank = c_bank.getText();
-        String city = c_city.getText();
+        
         String person_name = cp_name.getText();
         String contact_person = c_person.getText();
-        String person_tp = cp_tp.getText();
-        String email = cp_email.getText();
-        String online = cp_online.getText();
-
+        
         try {
 
             Statement s = db.mycon().createStatement();
             s.executeUpdate(" UPDATE employee SET employee_name ='"+name+"'"
                 + " ,Tp_Number ='"+tp+"'"
-                + ",main_address ='"+ bill_add +"'"
-                + ",temp_address ='"+ shipp_add +"' "
-                + ",bank ='"+ bank +"' "
-                + ",city ='"+ city +"' "
+               
                 + ",person_name ='"+ person_name +"' "
                 + ",contact_person ='"+ contact_person +"' "
-                + ",person_tp ='"+ person_tp +"' "
-                + ",email ='"+ email +"' "
-                + ",online ='"+ online +"' "
+               
                 + " WHERE eid = '"+id+"' ");
             JOptionPane.showMessageDialog(null, "Dtata Updated");
 
@@ -1033,10 +834,6 @@ public class employee extends javax.swing.JPanel {
         clearText();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void c_bankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_bankActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_c_bankActionPerformed
-
     private void sh_pnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sh_pnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sh_pnActionPerformed
@@ -1052,47 +849,30 @@ public class employee extends javax.swing.JPanel {
         String id = jTable1.getValueAt(r, 0).toString();
         String name = jTable1.getValueAt(r, 1).toString();
         String tp = jTable1.getValueAt(r, 2).toString();
-        String m_add = jTable1.getValueAt(r, 3).toString();
-        String temp_add = jTable1.getValueAt(r, 4).toString();
-        String bank = jTable1.getValueAt(r, 5).toString();
-        String city = jTable1.getValueAt(r, 6).toString();
+        
         String per_name = jTable1.getValueAt(r, 7).toString();
         String con_pre = jTable1.getValueAt(r, 8).toString();
-        String p_tp = jTable1.getValueAt(r, 9).toString();
-        String p_em = jTable1.getValueAt(r, 10).toString();
-        String p_on = jTable1.getValueAt(r, 11).toString();
+        
         
 
         c_search.setText(id);
         c_name.setText(name);
         c_tp.setText(tp);
-        c_billadd.setText(m_add);
-        c_shipadd.setText(temp_add);
-        c_bank.setText(bank);
-        c_city.setText(city);
+        
         cp_name.setText(per_name);
         c_person.setText(con_pre);
-        cp_tp.setText(p_tp);
-        cp_email.setText(p_em);
-        cp_online.setText(p_on);
+        
     }//GEN-LAST:event_jButton7ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField c_bank;
-    private javax.swing.JTextArea c_billadd;
-    private javax.swing.JTextField c_city;
     private javax.swing.JTextField c_name;
     private javax.swing.JTextField c_person;
     private javax.swing.JTextField c_search;
     private javax.swing.JTextField c_search_tbl;
-    private javax.swing.JTextArea c_shipadd;
     private javax.swing.JTextField c_tp;
     private javax.swing.JTextField cid;
-    private javax.swing.JTextField cp_email;
     private javax.swing.JTextField cp_name;
-    private javax.swing.JTextField cp_online;
-    private javax.swing.JTextField cp_tp;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1101,21 +881,13 @@ public class employee extends javax.swing.JPanel {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -1130,13 +902,9 @@ public class employee extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JCheckBox same;
     private javax.swing.JTextField sh_city;
-    private javax.swing.JTextField sh_cp;
     private javax.swing.JTextField sh_pn;
     private javax.swing.JTextField sh_tp;
     // End of variables declaration//GEN-END:variables

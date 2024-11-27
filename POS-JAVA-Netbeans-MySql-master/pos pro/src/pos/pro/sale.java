@@ -404,6 +404,11 @@ public class sale extends javax.swing.JPanel {
 
         paid_amt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         paid_amt.setText("0");
+        paid_amt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                paid_amtActionPerformed(evt);
+            }
+        });
         paid_amt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 paid_amtKeyReleased(evt);
@@ -781,6 +786,10 @@ public class sale extends javax.swing.JPanel {
         
         
     }//GEN-LAST:event_com_cusActionPerformed
+
+    private void paid_amtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paid_amtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_paid_amtActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
