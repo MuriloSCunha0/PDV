@@ -6,6 +6,8 @@
 package pos.pro;
 
 import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -32,46 +34,41 @@ public class supplier extends javax.swing.JPanel {
         
     }
 
-  public void tb_load(){
-  
-  
-      try {
-          
-          DefaultTableModel dt = (DefaultTableModel) jTable1.getModel();
-          dt.setRowCount(0);
-          
-          Statement s = db.mycon().createStatement();
-          ResultSet rs = s.executeQuery(" SELECT * FROM supplier");
-          
-          while (rs.next()) {              
-              
-              Vector v = new Vector();
-              
-              v.add(rs.getString(1));
-              v.add(rs.getString(2));
-              v.add(rs.getString(3));
-              v.add(rs.getString(4));
-              v.add(rs.getString(5));
-              v.add(rs.getString(6));
-              v.add(rs.getString(7));
-              v.add(rs.getString(8));
-              v.add(rs.getString(9));
-              v.add(rs.getString(10));
-              v.add(rs.getString(11));
-              v.add(rs.getString(12));
-              
-              dt.addRow(v);
-                          
-              
-              
-              
-          }
-          
-      } catch (SQLException e) {
-          System.out.println(e);
-      }
-  
-  } 
+  public void tb_load() {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos_db", "username", "password");
+
+            DefaultTableModel dt = (DefaultTableModel) jTable1.getModel();
+            dt.setRowCount(0);
+
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery("SELECT * FROM supplier");
+
+            while (rs.next()) {
+                Vector v = new Vector();
+
+                v.add(rs.getString(1));
+                v.add(rs.getString(2));
+                v.add(rs.getString(3));
+                v.add(rs.getString(4));
+                v.add(rs.getString(5));
+                v.add(rs.getString(6));
+                v.add(rs.getString(7));
+                v.add(rs.getString(8));
+                v.add(rs.getString(9));
+                v.add(rs.getString(10));
+                v.add(rs.getString(11));
+                v.add(rs.getString(12));
+
+                dt.addRow(v);
+            }
+
+            con.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
     
  public void serch(){
  
@@ -86,7 +83,7 @@ public class supplier extends javax.swing.JPanel {
          dtm.setRowCount(0);
          
          Statement s = db.mycon().createStatement();
-         ResultSet rs = s.executeQuery(" SELECT * FROM supplier WHERE product_type LIKE  '%"+ product_type +"%' AND tp_number LIKE '%"+ tp +"%' AND contact_person LIKE '%"+contact_person+"%' AND person_name LIKE '%"+person_name+"%' ");
+         ResultSet rs = s.executeQuery(" SELECT * FROM supplier WHERE product_type LIKE  '%"+ product_type +"%' AND tp_number LIKE '%"+ tp +"%' AND person_name LIKE '%"+person_name+"%' ");
          
         // You can Use OR or AND
          
