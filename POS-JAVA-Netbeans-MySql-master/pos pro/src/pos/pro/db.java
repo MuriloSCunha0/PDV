@@ -20,6 +20,9 @@ public class db {
             // Estabelecer a conexão
             con = DriverManager.getConnection(url, user, password);
             System.out.println("Conexão estabelecida com sucesso!");
+            
+            //Reiniciar Banco
+            resetDatabase(con);
 
             // Tentar criar o banco de dados se não existir
             Statement stmt = con.createStatement();
@@ -38,6 +41,22 @@ public class db {
             System.out.println("Erro ao conectar ao banco de dados: " + e.getMessage());
         }
         return con;
+    }
+    
+    private static void resetDatabase(Connection con) {
+        try (Statement stmt = con.createStatement()) {
+            // Apagar o banco de dados se existir
+            stmt.executeUpdate("DROP DATABASE IF EXISTS pos");
+            System.out.println("Banco de dados 'pos' apagado.");
+            
+            
+
+            // Criar o banco de dados novamente
+            stmt.executeUpdate("CREATE DATABASE pos");
+            System.out.println("Banco de dados 'pos' recriado com sucesso!");
+        } catch (SQLException e) {
+            System.out.println("Erro ao reiniciar o banco de dados: " + e.getMessage());
+        }
     }
 
     private static void createTables(Connection con) {

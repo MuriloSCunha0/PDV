@@ -362,7 +362,7 @@ public class customer extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Customer Name", "T.P Number", "Billing Address", "Shipping Address", "Bank", "City", "Person Name", "Contact Person", "Person TP", "Email", "Online"
+                "ID", "Customer Name", "City"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -670,7 +670,7 @@ public class customer extends javax.swing.JPanel {
         try {
 
             Statement s = db.mycon().createStatement();
-            s.executeUpdate(" INSERT INTO customer (customer_name,Tp_Number,billing_address,shipping_address,bank,city,person_name,contact_person,person_tp,email,online) "
+            s.executeUpdate(" INSERT INTO customer (customer_name,Tp_Number,city) "
                 + "VALUES ('"+name+"','"+tp+"','"+city+"')");
 
             JOptionPane.showMessageDialog(null, "Dtata saved");

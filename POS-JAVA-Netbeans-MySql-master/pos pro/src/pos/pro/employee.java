@@ -404,7 +404,7 @@ public class employee extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Employee Name", "T.P Number", "Main Address", "2nd Address", "Bank", "City", "Person Name", "Contact Person", "Person TP", "Email", "Online"
+                "ID", "Employee Name", "Funcao","Person Name", "Contact Person"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
