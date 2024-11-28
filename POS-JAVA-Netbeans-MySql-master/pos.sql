@@ -248,6 +248,7 @@ INSERT INTO `sales` (`saleid`, `INID`, `Cid`, `Customer_Name`, `Total_Qty`, `Tot
 CREATE TABLE IF NOT EXISTS `supplier` (
   `sid` int(11) NOT NULL AUTO_INCREMENT,
   `supplier_Name` varchar(50) NOT NULL,
+  `product_type` varchar(50) NOT NULL,
   `Tp_Number` varchar(10) NOT NULL,
   PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
@@ -256,11 +257,11 @@ CREATE TABLE IF NOT EXISTS `supplier` (
 -- Dumping data for table `supplier`
 --
 
-INSERT INTO `supplier` (`sid`, `supplier_Name`, `Tp_Number`) VALUES
-(1, 'sup test', '1100'),
-(2, 'mike', '`456-7854'),
-(3, 'albert', '789-88'),
-(4, 'baby', '222-33');
+INSERT INTO `supplier` (`sid`, `supplier_Name`, `product_type`,`Tp_Number`) VALUES
+(1, 'sup test', 'brincos','1100'),
+(2, 'mike', 'fone','`456-7854'),
+(3, 'albert', 'mochila','789-88'),
+(4, 'baby', 'garrafa','222-33');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -36,14 +36,12 @@ public class supplier extends javax.swing.JPanel {
 
   public void tb_load() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos_db", "username", "password");
-
+            
             DefaultTableModel dt = (DefaultTableModel) jTable1.getModel();
-            dt.setRowCount(0);
-
-            Statement s = con.createStatement();
-            ResultSet rs = s.executeQuery("SELECT * FROM supplier");
+          dt.setRowCount(0);
+          
+          Statement s = db.mycon().createStatement();
+          ResultSet rs = s.executeQuery(" SELECT * FROM supplier");
 
             while (rs.next()) {
                 Vector v = new Vector();
@@ -64,8 +62,7 @@ public class supplier extends javax.swing.JPanel {
                 dt.addRow(v);
             }
 
-            con.close();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e);
         }
     }
@@ -729,28 +726,22 @@ public class supplier extends javax.swing.JPanel {
 
         String name = c_name.getText();
         String tp = c_tp.getText();
-
-    
         String product_type = c_product_type.getText();
         String person_name = cp_name.getText();
         String contact_person = c_person.getText();
-       
+
         try {
-
             Statement s = db.mycon().createStatement();
-            s.executeUpdate(" INSERT INTO supplier (supplier_Name,Tp_Number,billing_address,shipping_address,bank,product_type,person_name,contact_person,person_tp,email,online) "
-                + "VALUES ('"+name+"','"+tp+"','"+product_type+"','"+person_name+"','"+contact_person+"')");
+            s.executeUpdate("INSERT INTO supplier (supplier_Name, Tp_Number, product_type, person_name, contact_person) VALUES ('" + name + "', '" + tp + "', '" + product_type + "', '" + person_name + "', '" + contact_person + "')");
 
-            JOptionPane.showMessageDialog(null, "Dtata saved");
+            JOptionPane.showMessageDialog(null, "Dados salvos com sucesso!");
 
         } catch (SQLException e) {
-
-            System.out.println(e);
-
+            System.out.println("Erro ao inserir dados: " + e.getMessage());
         }
 
-        tb_load();
-        clearText();
+        tb_load(); // Atualiza a tabela
+        clearText(); // Limpa os campos
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -767,7 +758,6 @@ public class supplier extends javax.swing.JPanel {
                 c_name.setText(rs.getString("supplier_Name"));
                 c_tp.setText(rs.getString("Tp_Number"));
                 c_product_type.setText(rs.getString("product_type"));
-
                 cp_name.setText(rs.getString("person_name"));
                 c_person.setText(rs.getString("contact_person"));
         

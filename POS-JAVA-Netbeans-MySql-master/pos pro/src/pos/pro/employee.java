@@ -51,14 +51,7 @@ public class employee extends javax.swing.JPanel {
               v.add(rs.getString(2));
               v.add(rs.getString(3));
               v.add(rs.getString(4));
-              v.add(rs.getString(5));
-              v.add(rs.getString(6));
-              v.add(rs.getString(7));
-              v.add(rs.getString(8));
-              v.add(rs.getString(9));
-              v.add(rs.getString(10));
-              v.add(rs.getString(11));
-              v.add(rs.getString(12));
+              
               
               dt.addRow(v);
                           
@@ -735,27 +728,22 @@ public class employee extends javax.swing.JPanel {
 
         String name = c_name.getText();
         String tp = c_tp.getText();
-
-        
         String person_name = cp_name.getText();
         String contact_person = c_person.getText();
-        
+
         try {
-
             Statement s = db.mycon().createStatement();
-            s.executeUpdate(" INSERT INTO employee (employee_name,Tp_Number,main_address,temp_address,bank,city,person_name,contact_person,person_tp,email,online) "
-                + "VALUES ('"+name+"','"+tp+"','"+person_name+"','"+contact_person+"')");
+            s.executeUpdate("INSERT INTO employee (employee_name, Tp_Number, person_name, contact_person) VALUES ('" 
+                + name + "','" + tp + "','" + person_name + "','" + contact_person + "')");
 
-            JOptionPane.showMessageDialog(null, "Dtata saved");
+            JOptionPane.showMessageDialog(null, "Dados salvos com sucesso!");
 
         } catch (SQLException e) {
-
-            System.out.println(e);
-
+            System.out.println("Erro ao inserir dados: " + e.getMessage());
         }
 
-        tb_load();
-        clearText();
+        tb_load(); // Atualiza a tabela
+        clearText(); // Limpa os campos
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

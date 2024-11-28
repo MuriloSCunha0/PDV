@@ -11,9 +11,9 @@ public class db {
         try {
             // Carregar o driver JDBC para MySQL
             Class.forName("com.mysql.cj.jdbc.Driver");
-
+            
             // URL de conexão com o servidor MySQL
-            String url = "jdbc:mysql://localhost:3306/";
+            String url = "jdbc:mysql://127.0.0.1:3306/?user=root";
             String user = "root"; // Altere para seu usuário
             String password = "12345"; // Altere para sua senha
 
@@ -49,23 +49,27 @@ public class db {
                     "cid INT AUTO_INCREMENT PRIMARY KEY, " +
                     "customer_name VARCHAR(255), " +
                     "Tp_Number VARCHAR(255), " +
-                    
-                    "city VARCHAR(255), " +
-                    "person_name VARCHAR(255), " +
-                    
-                    "person_tp VARCHAR(255), " +
+                    "city VARCHAR(255)" +
                     ");");
+            
+            // Criar tabela de vendedores
+            stmt.executeUpdate("CREATE TABLE IF NOT EXISTS employee (" +
+                    "cid INT AUTO_INCREMENT PRIMARY KEY, " +
+                    "employee_name VARCHAR(255), " +
+                    "Tp_Number VARCHAR(255), " +
+                    "person_name VARCHAR(255), " +
+                    "contact_person VARCHAR(255)" +
+                    ");");
+           
 
             // Criar tabela de fornecedores
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS supplier (" +
                     "sid INT AUTO_INCREMENT PRIMARY KEY, " +
                     "supplier_name VARCHAR(255), " +
                     "Tp_Number VARCHAR(255), " +
-                    
-                    "product_type(255), " +
-                    "city VARCHAR(255), " +
+                    "product_type VARCHAR(255), " +
                     "person_name VARCHAR(255), " +
-                    "contact_person VARCHAR(255), " +
+                    "contact_person VARCHAR(255)" +
                     
                     ");");
 

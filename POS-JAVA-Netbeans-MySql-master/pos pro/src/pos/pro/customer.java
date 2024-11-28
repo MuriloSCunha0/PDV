@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
-import java.util.Vector;
+import java.util.Vector; 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -50,15 +50,7 @@ public class customer extends javax.swing.JPanel {
               v.add(rs.getString(1));
               v.add(rs.getString(2));
               v.add(rs.getString(3));
-              v.add(rs.getString(4));
-              v.add(rs.getString(5));
-              v.add(rs.getString(6));
-              v.add(rs.getString(7));
-              v.add(rs.getString(8));
-              v.add(rs.getString(9));
-              v.add(rs.getString(10));
-              v.add(rs.getString(11));
-              v.add(rs.getString(12));
+              
               
               dt.addRow(v);
                           
@@ -706,7 +698,6 @@ public class customer extends javax.swing.JPanel {
 
                 c_name.setText(rs.getString("customer_name"));
                 c_tp.setText(rs.getString("Tp_Number"));
-                
                 c_city.setText(rs.getString("city"));
 
                 
@@ -722,21 +713,15 @@ public class customer extends javax.swing.JPanel {
         // update btn code
 
         String id = c_search.getText();
-
         String name = c_name.getText();
         String tp = c_tp.getText();
-
-        
         String city = c_city.getText();
         
 
         try {
 
             Statement s = db.mycon().createStatement();
-            s.executeUpdate(" UPDATE customer SET customer_name ='"+name+"'"
-                + " ,Tp_Number ='"+tp+"'"
-                
-                + ",city ='"+ city +"' "
+            s.executeUpdate(" UPDATE customer SET customer_name ='"+name+"'" + " ,Tp_Number ='"+tp+"'" + ",city ='"+ city +"' "
                 
                 + " WHERE cid = '"+id+"' ");
             JOptionPane.showMessageDialog(null, "Dtata Updated");
