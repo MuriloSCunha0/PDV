@@ -6,35 +6,19 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class db {
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/?user=root&password=12345";
+    private static final String DATABASE_NAME = "pos";
+
+    // Método para estabelecer a conexão com o banco de dados
     public static Connection mycon() {
         Connection con = null;
         try {
             // Carregar o driver JDBC para MySQL
             Class.forName("com.mysql.cj.jdbc.Driver");
-            
-            // URL de conexão com o servidor MySQL
-            String url = "jdbc:mysql://127.0.0.1:3306/?user=root";
-            String user = "root"; // Altere para seu usuário
-            String password = "12345"; // Altere para sua senha
-
             // Estabelecer a conexão
-            con = DriverManager.getConnection(url, user, password);
+            con = DriverManager.getConnection(URL);
+            con.setCatalog(DATABASE_NAME);
             System.out.println("Conexão estabelecida com sucesso!");
-            
-            //Reiniciar Banco
-            resetDatabase(con);
-
-            // Tentar criar o banco de dados se não existir
-            Statement stmt = con.createStatement();
-            stmt.executeUpdate("CREATE DATABASE IF NOT EXISTS pos");
-            System.out.println("Banco de dados 'pos' verificado/criado com sucesso!");
-
-            // Mudar o catálogo para o banco de dados 'pos'
-            con.setCatalog("pos");
-
-            // Criar tabelas necessárias
-            createTables(con);
-
         } catch (ClassNotFoundException e) {
             System.out.println("Driver não encontrado: " + e.getMessage());
         } catch (SQLException e) {
@@ -42,27 +26,30 @@ public class db {
         }
         return con;
     }
-    
-    private static void resetDatabase(Connection con) {
-        try (Statement stmt = con.createStatement()) {
-            // Apagar o banco de dados se existir
-            stmt.executeUpdate("DROP DATABASE IF EXISTS pos");
-            System.out.println("Banco de dados 'pos' apagado.");
-            
-            
 
-            // Criar o banco de dados novamente
-            stmt.executeUpdate("CREATE DATABASE pos");
-            System.out.println("Banco de dados 'pos' recriado com sucesso!");
+    // Método para inicializar o banco de dados e criar as tabelas
+    public static void initializeDatabase() {
+        try (Connection con = mycon()) {
+            if (con != null) {
+                // Cria o banco de dados se não existir
+                Statement stmt = con.createStatement();
+                stmt.executeUpdate("CREATE DATABASE IF NOT EXISTS " + DATABASE_NAME);
+                System.out.println("Banco de dados '" + DATABASE_NAME + "' verificado/criado com sucesso!");
+
+                // Muda o catálogo para o banco de dados 'pos'
+                con.setCatalog(DATABASE_NAME);
+
+                // Cria as tabelas necessárias
+                createTables(con);
+            }
         } catch (SQLException e) {
-            System.out.println("Erro ao reiniciar o banco de dados: " + e.getMessage());
+            System.out.println("Erro ao inicializar o banco de dados: " + e.getMessage());
         }
     }
 
+    // Método para criar as tabelas no banco de dados
     private static void createTables(Connection con) {
-        try {
-            Statement stmt = con.createStatement();
-
+        try (Statement stmt = con.createStatement()) {
             // Criar tabela de clientes
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS customer (" +
                     "cid INT AUTO_INCREMENT PRIMARY KEY, " +
@@ -70,7 +57,7 @@ public class db {
                     "Tp_Number VARCHAR(255), " +
                     "city VARCHAR(255)" +
                     ");");
-            
+
             // Criar tabela de vendedores
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS employee (" +
                     "cid INT AUTO_INCREMENT PRIMARY KEY, " +
@@ -79,7 +66,6 @@ public class db {
                     "person_name VARCHAR(255), " +
                     "contact_person VARCHAR(255)" +
                     ");");
-           
 
             // Criar tabela de fornecedores
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS supplier (" +
@@ -89,7 +75,6 @@ public class db {
                     "product_type VARCHAR(255), " +
                     "person_name VARCHAR(255), " +
                     "contact_person VARCHAR(255)" +
-                    
                     ");");
 
             // Criar tabela de produtos
@@ -127,18 +112,17 @@ public class db {
                     "Total_Price DECIMAL(10, 2)" +
                     ");");
 
- // Criar tabela de pagamentos
+            // Criar tabela de pagamentos
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS payment (" +
                     "paymentid INT AUTO_INCREMENT PRIMARY KEY, " +
                     "SaleID INT, " +
                     "Amount DECIMAL(10, 2), " +
                     "Payment_Method VARCHAR(255), " +
-                    "Payment_Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
+                    "Payment_Date DATETIME, " +
                     "FOREIGN KEY (SaleID) REFERENCES sales(saleid)" +
                     ");");
 
-            System.out.println("Tabelas criadas com sucesso!");
-
+            System.out.println("Todas as tabelas foram criadas ou já existem.");
         } catch (SQLException e) {
             System.out.println("Erro ao criar tabelas: " + e.getMessage());
         }

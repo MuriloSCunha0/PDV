@@ -52,12 +52,7 @@ public class supplier extends javax.swing.JPanel {
                 v.add(rs.getString(4));
                 v.add(rs.getString(5));
                 v.add(rs.getString(6));
-                v.add(rs.getString(7));
-                v.add(rs.getString(8));
-                v.add(rs.getString(9));
-                v.add(rs.getString(10));
-                v.add(rs.getString(11));
-                v.add(rs.getString(12));
+                
 
                 dt.addRow(v);
             }
