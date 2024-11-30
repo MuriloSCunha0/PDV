@@ -12,6 +12,8 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -21,6 +23,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class sale extends javax.swing.JPanel {
 
+    
+    private JComboBox<String> paymentMethodCombo;
     public static String barcode_c = "0" ;
     public static String cus_id = "0";
     
@@ -100,19 +104,16 @@ public class sale extends javax.swing.JPanel {
       
   }
     
- public void pro_tot_cal(){
- 
-  // product calculation
-         
+  public void pro_tot_cal() {
+    try {
         Double qt = Double.valueOf(p_qty.getText());
         Double price = Double.valueOf(u_price.getText());
-        Double tot ;
-        
-        tot = qt * price;
-        
+        Double tot = qt * price;
         tot_price.setText(String.valueOf(tot));
- 
- }   
+    } catch (NumberFormatException e) {
+        tot_price.setText("0.00"); // ou qualquer valor padrão que faça sentido
+    }
+}
  
  public void cart_total(){
  
@@ -145,17 +146,16 @@ public class sale extends javax.swing.JPanel {
  
  }
  
- public void tot(){
-     
- Double paid = Double.valueOf(paid_amt.getText());
-       Double tot = Double.valueOf(bill_tot.getText());
-       Double due ;
-       
-       due =  paid -tot ;
-       
-       balance.setText(String.valueOf(due));
- 
- }
+ public void tot() {
+    try {
+        Double paid = Double.valueOf(paid_amt.getText());
+        Double tot = Double.valueOf(bill_tot.getText());
+        Double due = paid - tot;
+        balance.setText(String.valueOf(due));
+    } catch (NumberFormatException e) {
+        balance.setText("0.00"); // ou qualquer valor padrão que faça sentido
+    }
+}
  
  
  
@@ -400,7 +400,7 @@ public class sale extends javax.swing.JPanel {
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setText("Desconto:");
+        jLabel8.setText("Valor pago:");
 
         paid_amt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         paid_amt.setText("0");
@@ -427,7 +427,7 @@ public class sale extends javax.swing.JPanel {
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel11.setText("Desconto");
+        jLabel11.setText("Saldo");
 
         balance.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         balance.setText("00.00");
@@ -559,35 +559,20 @@ public class sale extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void com_proActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_com_proActionPerformed
-        // load unit price
-       
-        String  name =com_pro.getSelectedItem().toString();
-        try {
-            
-            Statement s = db.mycon().createStatement();
-            ResultSet rs = s.executeQuery("SELECT Bar_code,Price FROM product  WHERE Product_Name ='"+name+"'  ");
-            if (rs.next()) {
-                 
-               
-                u_price.setText(rs.getString("Price"));
-                br_code.setText(rs.getString("Bar_code"));
-             
-                
-                
-            }
-          
-        
-        
-             pro_tot_cal();
-            
-            
-        } catch (SQLException e) {
-            System.out.println(e);
+    private void com_proActionPerformed(java.awt.event.ActionEvent evt) {
+    String name = com_pro.getSelectedItem().toString();
+    try {
+        Statement s = db.mycon().createStatement();
+        ResultSet rs = s.executeQuery("SELECT Bar_code, Price FROM product WHERE Product_Name ='" + name + "'");
+        if (rs.next()) {
+            u_price.setText(rs.getString("Price"));
+            br_code.setText(rs.getString("Bar_code"));
         }
-        
-        
-    }//GEN-LAST:event_com_proActionPerformed
+        pro_tot_cal(); // Chame a função para calcular o total
+    } catch (SQLException e) {
+        System.out.println(e);
+    }
+}
 
     private void p_qtyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_p_qtyKeyReleased
         

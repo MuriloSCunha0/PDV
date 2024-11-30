@@ -379,7 +379,7 @@ public class employee extends javax.swing.JPanel {
                 .addContainerGap(125, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Add Employee", jPanel6);
+        jTabbedPane1.addTab("Cadastrar", jPanel6);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -397,7 +397,7 @@ public class employee extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Employee Name", "Funcao","Person Name", "Contact Person"
+                "ID", "Employee Name", "T.P Number", "Main Address", "2nd Address", "Bank", "City", "Person Name", "Contact Person", "Person TP", "Email", "Online"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -559,7 +559,7 @@ public class employee extends javax.swing.JPanel {
                         .addGap(0, 47, Short.MAX_VALUE))))
         );
 
-        jTabbedPane1.addTab("Serch Employee", jPanel4);
+        jTabbedPane1.addTab("Buscar", jPanel4);
 
         jButton5.setText("All Employee  Reports");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -591,7 +591,7 @@ public class employee extends javax.swing.JPanel {
                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE))
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cid, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(793, Short.MAX_VALUE))
+                .addContainerGap(790, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -607,7 +607,7 @@ public class employee extends javax.swing.JPanel {
                 .addContainerGap(299, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Reports", jPanel11);
+        jTabbedPane1.addTab("Reportar", jPanel11);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

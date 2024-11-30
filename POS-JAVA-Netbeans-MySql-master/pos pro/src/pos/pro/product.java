@@ -83,7 +83,7 @@ public class product extends javax.swing.JPanel {
         jButton4 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        p_sid = new javax.swing.JTextField();
+        p_type = new javax.swing.JTextField();
         p_price = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         p_qty = new javax.swing.JTextField();
@@ -99,7 +99,7 @@ public class product extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Name :");
+        jLabel1.setText("Nome:");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Bar Code :");
@@ -117,7 +117,7 @@ public class product extends javax.swing.JPanel {
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/pro/img/delete.png"))); // NOI18N
-        jButton1.setText("Delete");
+        jButton1.setText("Deletar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -126,7 +126,7 @@ public class product extends javax.swing.JPanel {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/pro/img/update.png"))); // NOI18N
-        jButton2.setText("Update");
+        jButton2.setText("Atualizar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -135,7 +135,7 @@ public class product extends javax.swing.JPanel {
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/pro/img/search x30.png"))); // NOI18N
-        jButton3.setText("Search");
+        jButton3.setText("Buscar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -144,7 +144,7 @@ public class product extends javax.swing.JPanel {
 
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pos/pro/img/save.png"))); // NOI18N
-        jButton4.setText("Save");
+        jButton4.setText("Salvar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -155,10 +155,10 @@ public class product extends javax.swing.JPanel {
         jLabel5.setText("Price :");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setText("SUpplier ID :");
+        jLabel6.setText("Categoria:");
 
-        p_sid.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        p_sid.setText("0");
+        p_type.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        p_type.setText("0");
 
         p_price.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         p_price.setText("0");
@@ -191,7 +191,7 @@ public class product extends javax.swing.JPanel {
                                     .addGap(8, 8, 8)
                                     .addComponent(jLabel6)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(p_sid, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(p_type, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addComponent(jLabel7)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -237,7 +237,7 @@ public class product extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(p_sid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(p_type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
@@ -255,7 +255,7 @@ public class product extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Product Name", "Bar Code", "Price", "Qty", "SID"
+                "ID", "Product Name", "Bar Code", "Price", "Qty", "Product Type"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -375,13 +375,13 @@ public class product extends javax.swing.JPanel {
         String bcode = p_bcode.getText();
         String price = p_price.getText();
         String qty = p_qty.getText();
-        String sid = p_sid.getText();
+        String product_type = p_type.getText();
       
         try {
             
             Statement s = db.mycon().createStatement();
-          // `pid`, `Product_Name`, `Bar_code`, `Price`, `Qty`, `Sid` 
-            s.executeUpdate("INSERT INTO product (Product_Name,Bar_code,Price,Qty,Sid) VALUES ('"+name+"','"+bcode+"','"+price+"','"+qty+"','"+sid+"')");
+          // `pid`, `Product_Name`, `Bar_code`, `Price`, `Qty`, `Product_type` 
+            s.executeUpdate("INSERT INTO product (Product_Name,Bar_code,Price,Qty,Product_type) VALUES ('"+name+"','"+bcode+"','"+price+"','"+qty+"','"+product_type+"')");
             JOptionPane.showMessageDialog(null, "Data Seved");
             
             
@@ -413,7 +413,7 @@ public class product extends javax.swing.JPanel {
                 p_bcode.setText(rs.getString("Bar_code"));
                 p_price.setText(rs.getString("Price"));
                 p_qty.setText(rs.getString("Qty"));
-                p_sid.setText(rs.getString("Sid"));
+                p_type.setText(rs.getString("Product_type"));
                 
                 
                 
@@ -439,15 +439,15 @@ public class product extends javax.swing.JPanel {
         String bcode = p_bcode.getText();
         String price = p_price.getText();
         String qty = p_qty.getText();
-        String sid = p_sid.getText();
+        String product_type = p_type.getText();
         
         try {
             
           Statement s = db.mycon().createStatement();
           
-          //  Full texts 	pid 	Product_Name 	Bar_code 	Price 	Qty 	Sid 
+          //  Full texts 	pid 	Product_Name 	Bar_code 	Price 	Qty 	Product_type 
           
-          s.executeUpdate("UPDATE product SET Product_Name='"+name+"',Bar_code='"+bcode+"' ,Price='"+price+"',Qty='"+qty+"',Sid='"+sid+"' WHERE pid ='"+id+"' ");
+          s.executeUpdate("UPDATE product SET Product_Name='"+name+"',Bar_code='"+bcode+"' ,Price='"+price+"',Qty='"+qty+"',Product_type='"+product_type+"' WHERE pid ='"+id+"' ");
             
             JOptionPane.showMessageDialog(null, "Data Updated");
             
@@ -493,14 +493,14 @@ public class product extends javax.swing.JPanel {
        String bcode  = jTable1.getValueAt(r, 2).toString();
        String price  = jTable1.getValueAt(r, 3).toString();
        String qty  = jTable1.getValueAt(r, 4).toString();
-       String sid  = jTable1.getValueAt(r, 5).toString();
+       String product_type  = jTable1.getValueAt(r, 5).toString();
        
         p_src.setText(id);
         p_name.setText(name);
         p_bcode.setText(bcode);
         p_price.setText(price);
         p_qty.setText(qty);
-        p_sid.setText(sid);
+        p_type.setText(product_type);
         
     }//GEN-LAST:event_jTable1MouseClicked
 
@@ -568,7 +568,7 @@ public class product extends javax.swing.JPanel {
     private javax.swing.JTextField p_name;
     private javax.swing.JTextField p_price;
     private javax.swing.JTextField p_qty;
-    private javax.swing.JTextField p_sid;
+    private javax.swing.JTextField p_type;
     private javax.swing.JTextField p_src;
     // End of variables declaration//GEN-END:variables
 }

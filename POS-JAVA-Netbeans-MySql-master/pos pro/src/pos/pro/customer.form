@@ -51,8 +51,8 @@
             <Container class="javax.swing.JPanel" name="jPanel6">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Add Customer">
-                    <Property name="tabTitle" type="java.lang.String" value="Add Customer"/>
+                  <JTabbedPaneConstraints tabName="Adicionar">
+                    <Property name="tabTitle" type="java.lang.String" value="Adicionar"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -211,7 +211,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="14" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Name :"/>
+                        <Property name="text" type="java.lang.String" value="Nome: "/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -350,8 +350,8 @@
             <Container class="javax.swing.JPanel" name="jPanel4">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Serch Customer">
-                    <Property name="tabTitle" type="java.lang.String" value="Serch Customer"/>
+                  <JTabbedPaneConstraints tabName="Buscar">
+                    <Property name="tabTitle" type="java.lang.String" value="Buscar"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -600,7 +600,7 @@
                               <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
                               <Component id="cid" alignment="1" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="793" max="32767" attributes="0"/>
+                          <EmptySpace pref="956" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>

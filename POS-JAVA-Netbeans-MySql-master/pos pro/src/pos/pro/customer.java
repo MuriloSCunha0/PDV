@@ -192,7 +192,7 @@ public class customer extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Name :");
+        jLabel1.setText("Nome: ");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Contato:");
@@ -276,9 +276,9 @@ public class customer extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(58, 58, 58)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel1))
@@ -336,7 +336,7 @@ public class customer extends javax.swing.JPanel {
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Add Customer", jPanel6);
+        jTabbedPane1.addTab("Adicionar", jPanel6);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -354,7 +354,7 @@ public class customer extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Customer Name", "City"
+                "ID", "Customer Name", "T.P Number", "Billing Address", "Shipping Address", "Bank", "City", "Person Name", "Contact Person", "Person TP", "Email", "Online"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -489,7 +489,7 @@ public class customer extends javax.swing.JPanel {
                         .addGap(0, 47, Short.MAX_VALUE))))
         );
 
-        jTabbedPane1.addTab("Serch Customer", jPanel4);
+        jTabbedPane1.addTab("Buscar", jPanel4);
 
         jButton5.setText("All Customer Reports");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -521,7 +521,7 @@ public class customer extends javax.swing.JPanel {
                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE))
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cid, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(793, Short.MAX_VALUE))
+                .addContainerGap(956, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
