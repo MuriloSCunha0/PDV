@@ -50,6 +50,7 @@ public class product extends javax.swing.JPanel {
               v.add(rs.getString(4));
               v.add(rs.getString(5));
               v.add(rs.getString(6));
+              v.add(rs.getString(7));
               
               dt.addRow(v);
                           
@@ -83,10 +84,12 @@ public class product extends javax.swing.JPanel {
         jButton4 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        p_type = new javax.swing.JTextField();
+        p_sid = new javax.swing.JTextField();
         p_price = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         p_qty = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        p_type = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
@@ -155,10 +158,10 @@ public class product extends javax.swing.JPanel {
         jLabel5.setText("Price :");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setText("Categoria:");
+        jLabel6.setText("Fornecedor");
 
-        p_type.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        p_type.setText("0");
+        p_sid.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        p_sid.setText("0");
 
         p_price.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         p_price.setText("0");
@@ -168,6 +171,12 @@ public class product extends javax.swing.JPanel {
 
         p_qty.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         p_qty.setText("0");
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setText("Categoria:");
+
+        p_type.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        p_type.setText("0");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -187,15 +196,21 @@ public class product extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton1))
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                    .addGap(8, 8, 8)
-                                    .addComponent(jLabel6)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(p_type, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addComponent(jLabel7)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(p_qty, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(p_qty, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGap(8, 8, 8)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel6)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(p_sid, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel9)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(p_type, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -237,6 +252,10 @@ public class product extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
+                    .addComponent(p_sid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
                     .addComponent(p_type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -255,7 +274,7 @@ public class product extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Product Name", "Bar Code", "Price", "Qty", "Product Type"
+                "ID", "Product Name", "Bar Code", "Price", "Qty", "SID"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -368,34 +387,35 @@ public class product extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_p_bcodeActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // save product
-        
-        String name = p_name.getText();
-        String bcode = p_bcode.getText();
-        String price = p_price.getText();
-        String qty = p_qty.getText();
-        String product_type = p_type.getText();
-      
-        try {
-            
-            Statement s = db.mycon().createStatement();
-          // `pid`, `Product_Name`, `Bar_code`, `Price`, `Qty`, `Product_type` 
-            s.executeUpdate("INSERT INTO product (Product_Name,Bar_code,Price,Qty,Product_type) VALUES ('"+name+"','"+bcode+"','"+price+"','"+qty+"','"+product_type+"')");
-            JOptionPane.showMessageDialog(null, "Data Seved");
-            
-            
-        } catch (SQLException e) {
-            System.out.println(e);
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
+    // Obtenha os dados do produto
+    String name = p_name.getText();
+    String bcode = p_bcode.getText();
+    String price = p_price.getText();
+    String qty = p_qty.getText();
+    String supplier_name = sp_name.getText(); // Suponha que você tenha um campo para o nome do fornecedor
+    String product_type = p_type.getText(); // Suponha que você tenha um campo para o tipo de produto
+
+    try {
+        // Primeiro, busque o ID do fornecedor com base no nome
+        Statement s = db.mycon().createStatement();
+        ResultSet rs = s.executeQuery("SELECT sid FROM supplier WHERE supplier_name = '" + supplier_name + "'");
+
+        if (rs.next()) {
+            int supplierId = rs.getInt("sid"); // Obtenha o ID do fornecedor
+
+            // Agora, insira o produto com o ID do fornecedor
+            s.executeUpdate("INSERT INTO product (Product_Name, Bar_code, Price, Qty, Sid) VALUES ('" + name + "', '" + bcode + "', '" + price + "', '" + qty + "', " + supplierId + ")");
+            JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Fornecedor não encontrado!");
         }
-  
-        
-        
-         tb_load();
-        
-        
-        
-    }//GEN-LAST:event_jButton4ActionPerformed
+    } catch (SQLException e) {
+        System.out.println(e);
+    }
+
+    tb_load(); // Atualiza a tabela
+}
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // search btn code
@@ -413,7 +433,8 @@ public class product extends javax.swing.JPanel {
                 p_bcode.setText(rs.getString("Bar_code"));
                 p_price.setText(rs.getString("Price"));
                 p_qty.setText(rs.getString("Qty"));
-                p_type.setText(rs.getString("Product_type"));
+                sp_name.setText(rs.getString("supplier_name"));
+                p_type.setText(rs.getString("product_type"));
                 
                 
                 
@@ -439,15 +460,16 @@ public class product extends javax.swing.JPanel {
         String bcode = p_bcode.getText();
         String price = p_price.getText();
         String qty = p_qty.getText();
+        String supplier_name = sp_name.getText();
         String product_type = p_type.getText();
         
         try {
             
           Statement s = db.mycon().createStatement();
           
-          //  Full texts 	pid 	Product_Name 	Bar_code 	Price 	Qty 	Product_type 
+          //  Full texts 	pid 	Product_Name 	Bar_code 	Price 	Qty 	supplier_name 
           
-          s.executeUpdate("UPDATE product SET Product_Name='"+name+"',Bar_code='"+bcode+"' ,Price='"+price+"',Qty='"+qty+"',Product_type='"+product_type+"' WHERE pid ='"+id+"' ");
+          s.executeUpdate("UPDATE product SET Product_Name='"+name+"',Bar_code='"+bcode+"' ,Price='"+price+"',Qty='"+qty+"',supplier_name='"+supplier_name+"', product_type = '"+product_type+"' WHERE pid ='"+id+"' ");
             
             JOptionPane.showMessageDialog(null, "Data Updated");
             
@@ -493,13 +515,15 @@ public class product extends javax.swing.JPanel {
        String bcode  = jTable1.getValueAt(r, 2).toString();
        String price  = jTable1.getValueAt(r, 3).toString();
        String qty  = jTable1.getValueAt(r, 4).toString();
-       String product_type  = jTable1.getValueAt(r, 5).toString();
+       String supplier_name  = jTable1.getValueAt(r, 5).toString();
+       String product_type  = jTable1.getValueAt(r, 6).toString();
        
         p_src.setText(id);
         p_name.setText(name);
         p_bcode.setText(bcode);
         p_price.setText(price);
         p_qty.setText(qty);
+        sp_name.setText(supplier_name);
         p_type.setText(product_type);
         
     }//GEN-LAST:event_jTable1MouseClicked
@@ -524,6 +548,7 @@ public class product extends javax.swing.JPanel {
                 v.add(rs.getString(4));
                 v.add(rs.getString(5));
                 v.add(rs.getString(6));
+                v.add(rs.getString(7));
                 
                 dt.addRow(v);
                 
@@ -559,6 +584,7 @@ public class product extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -568,6 +594,8 @@ public class product extends javax.swing.JPanel {
     private javax.swing.JTextField p_name;
     private javax.swing.JTextField p_price;
     private javax.swing.JTextField p_qty;
+    private javax.swing.JTextField p_sid;
+    private javax.swing.JTextField sp_name;
     private javax.swing.JTextField p_type;
     private javax.swing.JTextField p_src;
     // End of variables declaration//GEN-END:variables

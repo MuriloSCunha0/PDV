@@ -85,7 +85,8 @@ public class db {
                     "Price DECIMAL(10, 2), " +
                     "Qty INT, " +
                     "Sid INT, " +
-                    "FOREIGN KEY (Product_type) REFERENCES supplier(product_type)" +
+                    "Product_Type VARCHAR(255), " +
+                    "FOREIGN KEY (Sid) REFERENCES supplier(sid)" +
                     ");");
 
             // Criar tabela de vendas
@@ -98,6 +99,7 @@ public class db {
                     "Total_Bill DECIMAL(10, 2), " +
                     "Status VARCHAR(255), " +
                     "Balance DECIMAL(10, 2), " +
+                    "Payment_Method VARCHAR(50), " +
                     "FOREIGN KEY (Cid) REFERENCES customer(cid)" +
                     ");");
 
